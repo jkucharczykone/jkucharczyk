@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/2.0/ref/settings/
 
 import os
 import django_heroku
+import dj_database_url
 
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
@@ -74,16 +75,9 @@ WSGI_APPLICATION = "jkucharczyk.wsgi.application"
 # Database
 # https://docs.djangoproject.com/en/2.0/ref/settings/#databases
 
-DATABASES = {
-    "default": {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'd9vd016potqgfr',
-        'USER': 'wlkoeqqfrgkxrr',
-        'PASSWORD': '6ff353fd90d3c16a2334725ab2df3286c781fa32b9dcc90f4fc5ee41325237c0',
-        'HOST': 'ec2-54-75-244-161.eu-west-1.compute.amazonaws.com',
-        'PORT': '5432',  
-    }
-}
+DATABASES = {}
+DATABASES = {'default': dj_database_url.config(default=os.environ["DATABASE_URL"])}
+DATABASES['default']['ENGINE'] = 'django_postgrespool'
 
 # Password validation
 # https://docs.djangoproject.com/en/2.0/ref/settings/#auth-password-validators
