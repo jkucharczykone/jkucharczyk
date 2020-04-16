@@ -27,8 +27,7 @@ SECRET_KEY = "CHANGE_ME!!!! (P.S. the SECRET_KEY environment variable will be us
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
-
+ALLOWED_HOSTS = ['0.0.0.0', 'localhost', '127.0.0.1','jkucharczyk.herokuapp.com']
 
 # Application definition
 
@@ -77,8 +76,12 @@ WSGI_APPLICATION = "jkucharczyk.wsgi.application"
 
 DATABASES = {
     "default": {
-        "ENGINE" : "django.db.backends.sqlite3",
-        "NAME": os.path.join(BASE_DIR, "db.sqlite3")
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'd9vd016potqgfr',
+        'USER': 'wlkoeqqfrgkxrr',
+        'PASSWORD': '6ff353fd90d3c16a2334725ab2df3286c781fa32b9dcc90f4fc5ee41325237c0',
+        'HOST': 'ec2-54-75-244-161.eu-west-1.compute.amazonaws.com',
+        'PORT': '5432',  
     }
 }
 
