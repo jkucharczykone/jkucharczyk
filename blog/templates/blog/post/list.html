@@ -3,7 +3,7 @@
 {% block title %}Mój blog{% endblock %}
 
 {% block content %}
-    <h1>Mój blog</h1>
+    <!-- <h1>Mój blog</h1> -->
     {% for post in posts %}
     <h2>
         <a href="{{ post.get_absolute_url }}" class="post-href">
@@ -14,7 +14,7 @@
     {{ post.body|truncatewords:30|linebreaks }}
     </div>
     <p class="date">
-        Opublikowany {{ post.published }} przez {{ post.author }}
+        Opublikowany {{ post.publish }} przez {{ post.author }}
     </p>
     {% endfor %}
 {% endblock %}

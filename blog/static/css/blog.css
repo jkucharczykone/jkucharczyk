@@ -1,4 +1,4 @@
-@import "https://fonts.googleapis.com/css2?family=Barlow+Condensed:300,400,500,600,700";
+@import "https://fonts.googleapis.com/css2?family=Barlow+Condensed";
 
 body {
     font-family: 'Poppins', sans-serif;
@@ -90,3 +90,33 @@ ul ul a {
         margin-left: 0;
     }
 }
+
+.post-href {
+    font-size: 20px;
+    cursor: pointer;
+
+}
+.post-href:hover {
+    font-size: 22px;
+    font-weight: bold;
+}
+p.date {
+    color: green;
+    text-align: right;
+}
+#sidebarCollapse {
+    font-size: 3.742vw;
+    position: fixed;
+    right: 1.042vw;
+    bottom: 1.042vw;
+    cursor: pointer;
+}
+.noselect {
+    -webkit-touch-callout: none; /* iOS Safari */
+      -webkit-user-select: none; /* Safari */
+       -khtml-user-select: none; /* Konqueror HTML */
+         -moz-user-select: none; /* Old versions of Firefox */
+          -ms-user-select: none; /* Internet Explorer/Edge */
+              user-select: none; /* Non-prefixed version, currently
+                                    supported by Chrome, Opera and Firefox */
+  }
