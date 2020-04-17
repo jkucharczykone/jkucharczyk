@@ -17,4 +17,5 @@
         Opublikowany {{ post.publish }} przez {{ post.author }}
     </p>
     {% endfor %}
+    {% include "blog/pagination.html" with page=posts %}
 {% endblock %}

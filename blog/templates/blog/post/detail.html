@@ -10,9 +10,9 @@
     <p class="date">
         Opublikowany {{ post.publish }} przez {{ post.author }}
     </p>
-    <script>
-        $(document).ready(function () {
-            $("#all-posts").removeClass('active');
-        });
-    </script>
+    <p>
+        <a href="{% url "blog:post_share" post.id %}">
+            Udostępnij post
+        </a>
+    </p>
 {% endblock %}

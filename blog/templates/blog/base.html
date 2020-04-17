@@ -14,16 +14,7 @@
 </head>
 <body>
     <div class="wrapper">
-        <nav id="sidebar">
-            <div class="sidebar-header">
-                <h3>JK blog</h3>
-            </div>
-            <ul class="list-unstyled">
-                <li id="all-posts" class="active">
-                    <a href="{% url 'blog:post_list' %}">Wszystkie posty</a>
-                </li>
-            </ul>
-        </nav>
+        {% include "blog/sidebar.html" %}
         <div id="content" class="container">
             {% block content %}
             {% endblock %}

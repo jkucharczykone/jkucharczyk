@@ -1,0 +1,11 @@
+<nav id="sidebar">
+    <div class="sidebar-header">
+        <h3>JK blog</h3>
+    </div>
+    {% url 'blog:post_list' as the_url %}
+    <ul class="list-unstyled">
+        <li id="all-posts"{% if request.get_full_path == the_url %}class="active"{% endif %}>
+            <a href="{{ the_url }}">Wszystkie posty</a>
+        </li>
+    </ul>
+</nav>
