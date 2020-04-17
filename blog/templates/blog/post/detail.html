@@ -4,8 +4,15 @@
 
 {% block content %}
     <h1>{{ post.title }}</h1>
+    <div id="post-body">
+        {{ post.body|linebreaks }}
+    </div>
     <p class="date">
         Opublikowany {{ post.published }} przez {{ post.author }}
     </p>
-    {{ post.body|linebreaks }}
+    <script>
+        $(document).ready(function () {
+            $("#all-posts").removeClass('active');
+        });
+    </script>
 {% endblock %}

@@ -26,13 +26,14 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = "CHANGE_ME!!!! (P.S. the SECRET_KEY environment variable will be used, if set, instead)."
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['0.0.0.0', 'localhost', '127.0.0.1','jkucharczyk.herokuapp.com']
 
 # Application definition
 
 INSTALLED_APPS = [
+    "bootstrap4",
     "blog",
     "django.contrib.admin",
     "django.contrib.auth",
