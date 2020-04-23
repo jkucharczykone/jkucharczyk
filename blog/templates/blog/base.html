@@ -27,11 +27,13 @@
     $(document).ready(function () {
     $('#sidebarCollapse').on('click', function () {
         $('#sidebar').toggleClass('active');
+        
         if (sideActive==0){
+            $("#sidebarCollapse").css("transform", "rotate(0)");
             $('#sidebarCollapse').text("donut_large")
-            sideActive=1
-        }
+            sideActive=1        }
         else if (sideActive==1){
+            $("#sidebarCollapse").css("transform", "rotate(360deg)");
             $('#sidebarCollapse').text("donut_small")
             sideActive=0
         }

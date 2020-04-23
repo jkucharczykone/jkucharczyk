@@ -110,6 +110,7 @@ p.date {
     right: 1.042vw;
     bottom: 1.042vw;
     cursor: pointer;
+    transition: .1s linear;
 }
 .noselect {
     -webkit-touch-callout: none; /* iOS Safari */
