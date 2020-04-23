@@ -10,6 +10,11 @@
     <p class="date">
         Opublikowany {{ post.publish }} przez {{ post.author }}
     </p>
+    <p class="date">
+        <a class="btn btn-info" href="{% url "blog:post_share" post.id %}">
+            Udostępnij post
+        </a>
+    </p>
     {% with comments.count as total_comments %}
     <h2>
         {{ total_comments }} komentarz{{ total_comments|pluralize:"y" }}
@@ -42,9 +47,4 @@
         <button type="submit" class="btn btn-primary">Dodaj komentarz</button>
     </form>
     {% endif %}
-    <p>
-        <a class="btn btn-info" href="{% url "blog:post_share" post.id %}">
-            Udostępnij post
-        </a>
-    </p>
 {% endblock %}
