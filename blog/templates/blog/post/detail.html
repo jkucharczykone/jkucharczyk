@@ -15,10 +15,18 @@
             Udostępnij post
         </a>
     </p>
+    <h5>Podobne posty</h5>
+    {% for post in similar_posts %}
+    <p>
+        <a href="{{ post.get_absolute_url }}">{{ post.title }}</a>
+    </p>
+    {% empty %}
+    Nie ma podobnych postów.
+    {% endfor %}
     {% with comments.count as total_comments %}
-    <h2>
+    <h5>
         {{ total_comments }} komentarz{{ total_comments|pluralize:"y" }}
-    </h2>
+    </h5>
     {% endwith %}
     {% for comment in comments %}
     <div class="comment">
@@ -32,9 +40,9 @@
     <p>Nie ma jeszcze żadnych komentarzy.</p>
     {% endfor %}
     {% if new_comment %}
-    <h2>Twój komentarz został dodany.</h2>
+    <h5>Twój komentarz został dodany.</h5>
     {% else %}
-    <h2>Dodaj nowy komentarz</h2>
+    <h5>Dodaj nowy komentarz</h5>
     <form action="" method="post">
         {% for field in comment_form %}
         <div class="form-group">

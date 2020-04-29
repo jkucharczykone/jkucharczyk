@@ -38,6 +38,7 @@ EMAIL_USE_TLS = True
 
 INSTALLED_APPS = [
     "bootstrap4",
+    "taggit",
     "blog",
     "django.contrib.admin",
     "django.contrib.auth",

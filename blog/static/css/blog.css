@@ -121,3 +121,13 @@ p.date {
               user-select: none; /* Non-prefixed version, currently
                                     supported by Chrome, Opera and Firefox */
   }
+
+  p.tags a {
+      color: #009EFE;
+      font-size: 20px;
+  }
+
+  p.tags a:hover {
+      /* font-size: 21px; */
+      font-weight: bold;
+  }
