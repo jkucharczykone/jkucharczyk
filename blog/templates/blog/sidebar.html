@@ -1,3 +1,4 @@
+{% load blog_tags %}
 <nav id="sidebar">
     <div class="sidebar-header">
         <h3>JK blog</h3>
@@ -5,7 +6,7 @@
     {% url 'blog:post_list' as the_url %}
     <ul class="list-unstyled">
         <li id="all-posts"{% if request.get_full_path == the_url %}class="active"{% endif %}>
-            <a href="{{ the_url }}">Wszystkie posty</a>
+            <a class="flex-center" href="{{ the_url }}"><span>Wszystkie posty</span><span class="badge badge-light">{% total_posts %}</span></a>
         </li>
     </ul>
 </nav>

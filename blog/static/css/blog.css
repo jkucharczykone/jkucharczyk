@@ -131,3 +131,9 @@ p.date {
       /* font-size: 21px; */
       font-weight: bold;
   }
+
+  .flex-center {
+    display: flex !important;
+    align-items: center;
+    justify-content: space-around;
+  }
