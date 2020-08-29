@@ -1,5 +1,5 @@
 <div>
-    <p style="margin-top: 15px">ostatnie posty: </p>
+    <p style="margin-top: 15px">ostatnie posty: </p >
     {% for post in latest_posts %}
         <ul>
             <a class="flex-center" href="{{ post.get_absolute_url }}">{{ post.title }}</a>    
