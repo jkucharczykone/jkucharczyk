@@ -8,5 +8,8 @@
         <li id="all-posts"{% if request.get_full_path == the_url %}class="active"{% endif %}>
             <a class="flex-center" href="{{ the_url }}"><span>Wszystkie posty</span><span class="badge badge-light">{% total_posts %}</span></a>
         </li>
+        <li>
+            {% show_latest_posts 3 %}
+        </li>
     </ul>
 </nav>
