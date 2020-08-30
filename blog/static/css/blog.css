@@ -138,6 +138,8 @@ p.date {
     align-items: center;
     justify-content: space-around;
   }
+  @media(min-width:960px) {
   #content {
       max-width: 60vw;
   }
+}
