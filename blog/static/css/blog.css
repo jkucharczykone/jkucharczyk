@@ -3,6 +3,7 @@
 body {
     font-family: 'Poppins', sans-serif;
     background: #fafafa;
+    
 }
 
 .wrapper {
@@ -15,7 +16,7 @@ p {
     font-size: 1.1em;
     font-weight: 300;
     line-height: 1.7em;
-    color: #999;
+    color: #000;
 }
 
 a, a:hover, a:focus {
@@ -136,4 +137,7 @@ p.date {
     display: flex !important;
     align-items: center;
     justify-content: space-around;
+  }
+  #content {
+      max-width: 60vw;
   }
