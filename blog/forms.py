@@ -13,3 +13,7 @@ class CommentForm(forms.ModelForm):
     name = forms.CharField(widget=forms.TextInput(attrs={'class':'form-control'}), max_length=25)
     email = forms.EmailField(widget=forms.EmailInput(attrs={'class': "form-control", "placeholder": "Wprowadź email"}))
     body = forms.CharField(widget = forms.Textarea(attrs={"class": "form-control","rows": 6}))
+
+class SearchForm(forms.Form):
+    query = forms.CharField()
+    

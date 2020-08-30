@@ -35,8 +35,11 @@ EMAIL_HOST_PASSWORD = os.environ["EMAIL_PASSWORD"]
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 # Application definition
-
+SITE_ID=1
 INSTALLED_APPS = [
+    'django.contrib.postgres',
+    'django.contrib.sitemaps',
+    'django.contrib.sites',
     "bootstrap4",
     "taggit",
     "blog",

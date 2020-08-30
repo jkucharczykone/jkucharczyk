@@ -1,11 +1,11 @@
 {% extends "blog/base.html" %}
 
 {% block title %}{{ post.title }}{% endblock %}
-
+{% load blog_tags %}
 {% block content %}
     <h1>{{ post.title }}</h1>
     <div id="post-body">
-        {{ post.body|linebreaks }}
+        {{ post.body|markdown }}
     </div>
     <p class="date">
         Opublikowany {{ post.publish }} przez {{ post.author }}
