@@ -18,6 +18,7 @@ admin.autodiscover()
 # Learn more here: https://docs.djangoproject.com/en/2.1/topics/http/urls/
 
 urlpatterns = [
+    path("", include('mainsite.urls', namespace='mainsite')),
     path("admin/", admin.site.urls),
     path("blog/", include('blog.urls', namespace='blog')),
     path('sitemap.xml',sitemap, {'sitemaps':sitemaps}, name='django.contrib.views.sitemap')

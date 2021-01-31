@@ -37,6 +37,7 @@ EMAIL_USE_TLS = True
 # Application definition
 SITE_ID=1
 INSTALLED_APPS = [
+    "mainsite",
     'django.contrib.postgres',
     'django.contrib.sitemaps',
     'django.contrib.sites',

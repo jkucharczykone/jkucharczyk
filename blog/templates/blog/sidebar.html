@@ -1,7 +1,7 @@
 {% load blog_tags %}
 <nav id="sidebar">
     <div class="sidebar-header">
-        <h3>JK blog</h3>
+        <h3>blog</h3>
     </div>
     {% url 'blog:post_list' as the_url %}
     <ul class="list-unstyled">
@@ -14,8 +14,8 @@
         <li>
             {% show_most_commented_posts 2 %}
         </li>
-        <li>
+        <!-- <li>
             <a class="flex-center" href="{% url "blog:post_feed" %}"><span>Subskrybuj kanał RSS</span></a>
-        </li>
+        </li> -->
     </ul>
 </nav>
