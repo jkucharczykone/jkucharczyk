@@ -1,0 +1,21 @@
+{% load blog_tags %}
+<nav id="sidebar">
+    <div class="sidebar-header">
+        <h3>blog</h3>
+    </div>
+    {% url 'blog:post_list' as the_url %}
+    <ul class="list-unstyled">
+        <li id="all-posts"{% if request.get_full_path == the_url %}class="active"{% endif %}>
+            <a class="flex-center" href="{{ the_url }}"><span>Wszystkie posty</span><span class="badge badge-light">{% total_posts %}</span></a>
+        </li>
+        <li>
+            {% show_latest_posts 3 %}
+        </li>
+        <li>
+            {% show_most_commented_posts 2 %}
+        </li>
+        <!-- <li>
+            <a class="flex-center" href="{% url "blog:post_feed" %}"><span>Subskrybuj kanał RSS</span></a>
+        </li> -->
+    </ul>
+</nav>

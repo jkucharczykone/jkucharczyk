@@ -1,0 +1,145 @@
+@import "https://fonts.googleapis.com/css2?family=Barlow+Condensed";
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: #fafafa;
+    
+}
+
+.wrapper {
+    display: flex;
+    align-items: stretch;
+}
+
+p {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1em;
+    font-weight: 300;
+    line-height: 1.4em;
+    color: #000;
+}
+
+a, a:hover, a:focus {
+    color: inherit;
+    text-decoration: none;
+    transition: all 0.3s;
+}
+a[data-toggle="collapse"] {
+    position: relative;
+}
+
+.dropdown-toggle::after {
+    display: block;
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+}
+
+#sidebar {
+    min-width: 250px;
+    max-width: 250px;
+    min-height: 100vh;
+    background: #265D80;
+    color: #fff;
+    transition: all 0.3s;
+}
+
+#sidebar .sidebar-header {
+    padding: 20px;
+    background: #265D80;
+}
+
+#sidebar ul.components {
+    padding: 20px 0;
+    border-bottom: 1px solid #007ECC;
+}
+
+#sidebar ul p {
+    color: #fff;
+    padding: 10px;
+}
+
+#sidebar ul li a {
+    padding: 10px;
+    font-size: 1.1em;
+    display: block;
+}
+#sidebar ul li a:hover {
+    color: #004F80;
+    background: #4DBBFF;
+}
+#sidebar.active {
+    margin-left: -250px;
+}
+
+#sidebar ul li.active > a, a[aria-expanded="true"] {
+    color: #fff;
+    background: #009EFE;
+}
+ul ul a {
+    font-size: 0.9em !important;
+    padding-left: 30px !important;
+    background: #007ECC;
+}
+
+@media (max-width: 768px) {
+    #sidebar {
+        margin-left: -250px;
+    }
+    #sidebar.active {
+        margin-left: 0;
+    }
+}
+
+.post-href {
+    font-size: 20px;
+    cursor: pointer;
+
+}
+.post-href:hover {
+    font-size: 20px;
+    font-weight: bold;
+}
+p.date {
+    color: green;
+    text-align: right;
+}
+#sidebarCollapse {
+    font-size: 3.742vw;
+    position: fixed;
+    right: 1.042vw;
+    bottom: 1.042vw;
+    cursor: pointer;
+    transition: .1s linear;
+}
+.noselect {
+    -webkit-touch-callout: none; /* iOS Safari */
+      -webkit-user-select: none; /* Safari */
+       -khtml-user-select: none; /* Konqueror HTML */
+         -moz-user-select: none; /* Old versions of Firefox */
+          -ms-user-select: none; /* Internet Explorer/Edge */
+              user-select: none; /* Non-prefixed version, currently
+                                    supported by Chrome, Opera and Firefox */
+  }
+
+  p.tags a {
+      color: #009EFE;
+      font-size: 20px;
+  }
+
+  p.tags a:hover {
+      /* font-size: 21px; */
+      font-weight: bold;
+  }
+
+  .flex-center {
+    display: flex !important;
+    align-items: center;
+    justify-content: space-around;
+  }
+  @media(min-width:960px) {
+  #content {
+      max-width: 60vw;
+  }
+}

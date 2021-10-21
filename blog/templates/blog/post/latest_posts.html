@@ -1,0 +1,8 @@
+<div>
+    <p style="margin-top: 15px">{{ title }}</p >
+    {% for post in latest_posts %}
+        <ul>
+            <a class="flex-center" href="{{ post.get_absolute_url }}">{{ post.title }}</a>    
+        </ul>
+    {% endfor %}
+</div>

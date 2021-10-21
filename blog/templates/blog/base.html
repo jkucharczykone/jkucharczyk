@@ -1,0 +1,46 @@
+{% load bootstrap4 %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% bootstrap_css %}
+    {% bootstrap_javascript jquery='full' %}
+    {% bootstrap_messages %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href="{% static "css/blog.css" %}">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+</head>
+<body>
+    <div class="wrapper">
+        {% include "blog/sidebar.html" %}
+        <div id="content" class="container">
+            {% block content %}
+            {% endblock %}
+        </div>
+    </div>
+    <span id="sidebarCollapse" class="material-icons noselect">donut_large</span>
+</body>
+<script>
+    var sideActive=1
+    $(document).ready(function () {
+    $('#sidebarCollapse').on('click', function () {
+        $('#sidebar').toggleClass('active');
+        
+        if (sideActive==0){
+            $("#sidebarCollapse").css("transform", "rotate(0)");
+            $('#sidebarCollapse').text("donut_large")
+            sideActive=1        }
+        else if (sideActive==1){
+            $("#sidebarCollapse").css("transform", "rotate(360deg)");
+            $('#sidebarCollapse').text("donut_small")
+            sideActive=0
+        }
+    });
+    $(".post-href").on('click', ()=>{
+        $("#all-posts").toggleClass('active');
+    })
+    });
+</script>
+</html>

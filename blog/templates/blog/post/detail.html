@@ -1,0 +1,58 @@
+{% extends "blog/base.html" %}
+
+{% block title %}{{ post.title }}{% endblock %}
+{% load blog_tags %}
+{% block content %}
+    <h1>{{ post.title }}</h1>
+    <div id="post-body">
+        {{ post.body|markdown }}
+    </div>
+    <p class="date">
+        Opublikowany {{ post.publish }} przez {{ post.author }}
+    </p>
+    <p class="date">
+        <a class="btn btn-info" href="{% url "blog:post_share" post.id %}">
+            Udostępnij post
+        </a>
+    </p>
+    <h5>Podobne posty</h5>
+    {% for post in similar_posts %}
+    <p>
+        <a href="{{ post.get_absolute_url }}">{{ post.title }}</a>
+    </p>
+    {% empty %}
+    Nie ma podobnych postów.
+    {% endfor %}
+    {% with comments.count as total_comments %}
+    <h5>
+        {{ total_comments }} komentarz{{ total_comments|pluralize:"y" }}
+    </h5>
+    {% endwith %}
+    {% for comment in comments %}
+    <div class="comment">
+        <p class="info">
+            Komentarz {{ forloop.counter }} dodany przez {{ comment.name }}
+            {{ comment.created }}
+        </p>
+        {{ comment.body|linebreaks }}
+    </div>
+    {% empty %}
+    <p>Nie ma jeszcze żadnych komentarzy.</p>
+    {% endfor %}
+    {% if new_comment %}
+    <h5>Twój komentarz został dodany.</h5>
+    {% else %}
+    <h5>Dodaj nowy komentarz</h5>
+    <form action="" method="post">
+        {% for field in comment_form %}
+        <div class="form-group">
+            <label>{{ field.label_tag }}</label> 
+            {{ field }}
+            <small class="form-text text-muted">{{ field.errors }}</small>
+        </div>
+        {% endfor %}
+        {% csrf_token %}
+        <button type="submit" class="btn btn-primary">Dodaj komentarz</button>
+    </form>
+    {% endif %}
+{% endblock %}
